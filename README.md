@@ -6,7 +6,7 @@
 
 * 系统环境
 
-  * Ubuntu20.04
+  * Ubuntu22.04
 
 * apue源码安装
 
