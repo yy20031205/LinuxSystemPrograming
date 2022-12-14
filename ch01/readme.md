@@ -1,4 +1,4 @@
 ```bash
-gcc lsdemo.c error.c -o lsdemo
+gcc lsdemo.c -o lsdemo -l apue
 ./lsdemo /etc
 ```
