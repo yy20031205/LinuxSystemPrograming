@@ -1,7 +1,8 @@
 #include "apue.h"
 
 /*
- 打印进程id
+ 1.打印进程id
+ 2.getpid()会返回进程id，它是一个pid_t类型
 */
 int main(void)
 {
