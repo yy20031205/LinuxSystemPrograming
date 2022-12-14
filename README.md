@@ -6,17 +6,17 @@
 
 * 系统环境
 
-  * Ubuntu20.04
+  * Ubuntu20.04[amd64]
 
 * apue源码安装
 
   ```sh
   
-   wget http://www.apuebook.com/src.3e.tar.gz
-   tar xf src.3e.tar.gz && cd apue.3e/
-   make 
-   cp apue.3e/include/apue.h /usr/include/
-   cp apue.3e/lib/libapue.a  /usr/local/lib/
+   $ wget http://www.apuebook.com/src.3e.tar.gz
+   $ tar xf src.3e.tar.gz && cd apue.3e/
+   $ make 
+   $ cp apue.3e/include/apue.h /usr/include/
+   $ cp apue.3e/lib/libapue.a  /usr/local/lib/
   
   ```
 
