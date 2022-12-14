@@ -15,8 +15,8 @@
    $ wget http://www.apuebook.com/src.3e.tar.gz
    $ tar xf src.3e.tar.gz && cd apue.3e/
    $ make 
-   $ cp apue.3e/include/apue.h /usr/include/
-   $ cp apue.3e/lib/libapue.a  /usr/local/lib/
+   $ sudo cp apue.3e/include/apue.h /usr/include/
+   $ sudo cp apue.3e/lib/libapue.a  /usr/local/lib/
   
   ```
 
