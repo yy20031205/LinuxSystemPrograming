@@ -1,78 +1,14 @@
-## 一、项目介绍
+## <UNIX环境高级编程(第三版)>学习笔记
 
-> **本项目是本人关于unix环境高级编程(第三版)这本书的学习记录****本项目是本人关于unix环境高级编程(第三版)这本书的学习记录**
-
-## 二、学习环境
-
-* 系统环境
-
-  * Ubuntu20.04[amd64]
-
-* apue源码安装
-
-  ```sh
-  
-   $ wget http://www.apuebook.com/src.3e.tar.gz
-   $ tar xf src.3e.tar.gz && cd apue.3e/
-   $ make 
-   $ sudo cp apue.3e/include/apue.h /usr/include/
-   $ sudo cp apue.3e/lib/libapue.a  /usr/local/lib/
-  
-  ```
-
-* make 执行过程中报错解决
-
-```sh
-# 报错1:
- /usr/bin/ld: devrdev.c:(.text+0xdb): undefined reference to `major'
-
-解决：
- filedir/devrdev.c添加#include <sys/sysmacros.h>
-
-# 报错2:
-  buf.c: In function ‘is_linebuffered’:
-  buf.c:90:15: error: ‘FILE’ {aka ‘struct _IO_FILE’} has no member named ‘__pad’; did you mean ‘__pad5’?
-   90 | #define _flag __pad[4]
-解决：
-  修改stdio/buf.c如下：
-    #ifdef _LP64
-    #define _flag __pad[4]
-    #define _ptr __pad[1]
-    #define _base __pad[2]
-    #endif
-
-    int
-    is_unbuffered(FILE *fp)
-    {
-            return(fp->_flags & _IONBF); // flag修改为flags
-    }
-
-    int
-    is_linebuffered(FILE *fp)
-    {
-            return(fp->_flags & _IOLBF); // flag修改为flags
-    }
-
-    int
-    buffer_size(FILE *fp)
-    {
-    #ifdef _LP64
-            //return(fp->_base - fp->_ptr);
-            return(fp->_IO_buf_end - fp->_IO_buf_base); // 修改
-
-    #else
-# 报错3:
-    can,t find-lbsd
-    
-  解决：
-    apt install libbsd-dev
-```
+本书是被誉为UNIX编程“圣经”的Advanced Programming in the UNIX Environment一书的第三版。在本书第2版出版后的几年中，UNIX行业已经有了巨大的变化，特别是影响UNIX编程接口的有关标准变化很大。本书在保持了前一版风格的基础上，根据最新的标准对内容进行了修订和增补，反映了最新的技术发展。书中除了介绍UNIX文件和目录、标准I/O库、系统数据文件和信息、进程环境、进程控制、进程关系、信号、线程、线程控制、守护进程、各种I/O、进程间通信、网络IPC、伪终端等方面的内容，还在此基础上介绍了多个应用示例，包括如何创建数据库函数库以及如何与网络打印机通信等。本书内容权威，概念清晰，阐述精辟，对于所有层次UNIX程序员都是一本不可或缺的参考书。
+## 目录
+* [APUE环境搭建](APUE/docs/环境搭建.md)
+## <linux/unix系统编程手册>学习笔记
 
 
+《linux/unix系统编程手册(上、下册)》总共分为64章，主要讲解了高效读写文件，对信号、时钟和定时器的运用，创建进程、执行程序，编写安全的应用程序，运用posix线程技术编写多线程程序，创建和使用共享库，运用管道、消息队列、共享内存和信号量技术来进行进程间通信，以及运用套接字api编写网络应用等内容。本书适合从事linux/unix系统开发、运维工作的技术人员阅读，同时也可作为高校计算机专业学生的参考研习资料。
 
-> 参考文档：
->
-> 1. https://blog.csdn.net/cxs5534/article/details/109324451
-> 2. https://www.codetd.com/article/1091340
-> 3. https://blog.csdn.net/cxs5534/article/details/109324451
+
+## 目录
+* [TLPI环境搭建](TLPI/docs/环境搭建.md)
 
