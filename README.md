@@ -15,7 +15,7 @@
 ## 三、<UNIX网络编程>
 
 ### 3.1 目录
-* [unp环境搭建](tcpIP/docs/环境搭建.md)
+* [unp环境搭建](UNP/docs/环境搭建.md)
 
 ## 四、<TCP/IP详解>
 
